@@ -5,6 +5,7 @@ function minSubArrayLen(arr, num) {
   while (i < arr.length){
     let sub = 0;
     let subTemp = 0;
+    let gap = 0;
 
     for(let i=0; i<n; i++){
       sub+=arr[i];
@@ -14,6 +15,7 @@ function minSubArrayLen(arr, num) {
 
     for(let i=n; i<arr.length; i++) {
       subTemp = subTemp - arr[i-n] + arr[i];
+      gap = Math.min(n-subTemp, n-sub)
     }
   }
 }
